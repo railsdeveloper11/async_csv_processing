@@ -1,0 +1,2 @@
+class ErrorResponsesController < ApplicationController
+end

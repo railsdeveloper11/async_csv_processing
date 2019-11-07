@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Identifiers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Row Number</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @identifiers.each do |identifier| %>
+      <tr>
+        <td><%= identifier.value %></td>
+        <% identifier.success_responses.each do |suc_res| %>
+          <td><%= suc_res.row_number %></td>
+          <td><%= suc_res.message %></td>
+        <% end %>
+      </tr>
+
+      <tr>
+        <td><%= identifier.value %></td>
+       <% identifier.error_responses.each do |suc_res| %>
+          <td><%= suc_res.row_number %></td>
+          <td><%= suc_res.message %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Identifier', new_identifier_path %>

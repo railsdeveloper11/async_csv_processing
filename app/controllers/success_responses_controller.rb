@@ -1,0 +1,2 @@
+class SuccessResponsesController < ApplicationController
+end
